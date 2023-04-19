@@ -5,8 +5,9 @@ div
       app-header
   .slot-background
     slot
-  .p-2
-  app-footer
+  .background
+    .container
+      app-footer
 </template>
 
 <script>
@@ -16,15 +17,16 @@ import AppFooter from "@/components/AppFooter.vue";
 export default {
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
   },
 };
 </script>
 
 <style lang="sass" scoped>
-.slot-background 
+.background
+  background-color: #0E1C36
+.slot-background
   background-image: url('/src/assets/images/background.png')
   background-size: cover
   background-position: center center
 </style>
-  

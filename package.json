@@ -2,17 +2,21 @@
   "name": "shop-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite-ssr --port 1337",
+    "build": "rm -rf dist && vite-ssr build",
+    "start": "node ./server/index.js"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@popperjs/core": "^2.11.7",
+    "@vueuse/head": "^1.1.23",
     "bootstrap": "^5.3.0-alpha2",
     "bootstrap-icons": "^1.10.3",
     "pug": "^3.0.2",
+    "purgecss": "^5.0.0",
     "sass": "^1.60.0",
+    "vite-ssr": "^0.17.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

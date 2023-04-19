@@ -14,8 +14,5 @@ export default {
       return defineAsyncComponent(() => import(`./custom/${layoutName}.vue`));
     },
   },
-  mounted() {
-    console.log(this.$route);
-  },
 };
 </script>

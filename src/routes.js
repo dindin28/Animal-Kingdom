@@ -1,17 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../src/pages/home.vue'
-
-const routes = [
+export default [
   {
     path: '/',
     name: 'Home',
-    component: Home,
-  }
+    component: () => import("./pages/home.vue"),
+  },
+  {
+    path: "/animals/:animalId",
+    component: () => import("./pages/animals.vue"),
+    name: 'Animals',
+  },
+  {
+    path: "/products/:productId",
+    component: () => import("./pages/products.vue"),
+    name: 'Products',
+  },
+  {
+    path: '/basket',
+    name: 'Basket',
+    component: () => import("./pages/basket.vue"),
+  },
 ];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-export default router;

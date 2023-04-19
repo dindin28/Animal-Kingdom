@@ -1,5 +1,5 @@
 <template lang="pug">
-footer.background
+footer
   .container
     .row.row-cols-1.row-cols-md-2.g-4
       .col
@@ -52,8 +52,6 @@ export default {
   color: white
 p
   margin-bottom: 0
-.background
-  background-color: #0E1C36
 
 .map-image
   width: 100%

@@ -21,7 +21,7 @@
       .col(v-for="category in categories" :key="category.link")
         .col-12.col-md-12
           a(:href="category.link")
-            img.img-grow.img-fluid(:src="category.src", width="160" alt="Animal Kingdom")
+            img.img-fluid.img-grow(:src="category.src", width="160" alt="Animal Kingdom")
     .p-4
     h2  ТОП товарів за кількістью продажів
     .row.my-4
@@ -29,13 +29,13 @@
         .col-md-12.col-12.mb-4
           a(:href="topItem.link")
             img.img-fluid.img-grow(:src="topItem.src", width="160", alt="Animal Kingdom")
-            p.text-dark {{ topItem.title }}
+            p.pt-3.text-dark {{ topItem.title }}
     .row.my-4
       .col.px-1(v-for="topItem in topItems.slice(3, 5)" :key="topItem.link")
         .col-md-12.col-12.mb-4
           a(:href="topItem.link")
             img.img-fluid.img-grow(:src="topItem.src", width="160", alt="Animal Kingdom")
-            p.text-dark {{ topItem.title }}
+            p.pt-3.text-dark {{ topItem.title }}
   .p-4
   .text-center 
     h2 Новинки
@@ -49,31 +49,31 @@ export default {
       categories: [
         {
           src: "/src/assets/images/chamsters.png",
-          link: "/chamsters",
+          link: "/animals/chamsters",
         },
         {
           src: "/src/assets/images/cats.png",
-          link: "/cats",
+          link: "/animals/cats",
         },
         {
           src: "/src/assets/images/dogs.png",
-          link: "/dogs",
+          link: "/animals/dogs",
         },
         {
           src: "/src/assets/images/fishes.png",
-          link: "/fishes",
+          link: "/animals/fishes",
         },
         {
           src: "/src/assets/images/birds.png",
-          link: "/birds",
+          link: "/animals/birds",
         },
         {
           src: "/src/assets/images/turtles.png",
-          link: "/turtles",
+          link: "/animals/turtles",
         },
         {
           src: "/src/assets/images/other.png",
-          link: "/other",
+          link: "/animals/other",
         },
       ],
       topItems: [
@@ -100,12 +100,12 @@ export default {
         {
           src: "/src/assets/images/slicker.png",
           link: "/products/slicker",
-          title: "Пуходірка"
+          title: "Пуходірка",
         },
-      ]
-    }
+      ],
+    };
   },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -118,7 +118,9 @@ export default {
 a
   color: #369
 img.img-grow
-  transition: all 0.25s ease-out
+  -webkit-transition: all 0.7s ease
+  transition: all 0.7s ease
   &:hover
-    transform: scale(1.15)
+    -webkit-transform: scale(1.2)
+    transform: scale(1.2)
 </style>

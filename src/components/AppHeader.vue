@@ -1,10 +1,10 @@
 <template lang="pug">
-header.navbar.navbar-expand-lg.navbar-light.flex-column.flex-lg-row.py-lg-3.py-2
+header.navbar.navbar-expand-lg.navbar-light.flex-column.flex-lg-row
   .container
     .d-flex.align-items-center
       a.navbar-brand(href="/")
-        img(src="/src/assets/images/лого.png", height="63", alt="Animal Kingdom")
-      h1.flex-grow-1 Animal Kingdom
+        img(src="/src/assets/images/лого.png", height="43", alt="Animal Kingdom")
+      h1.flex-grow-1.fw-bolder Animal Kingdom
     ul.navbar-nav.ml-auto.mb-2.mb-lg-0
       li.nav-item
         a.nav-link(href="/") Головна
@@ -13,7 +13,7 @@ header.navbar.navbar-expand-lg.navbar-light.flex-column.flex-lg-row.py-lg-3.py-2
       li.nav-item
         a.nav-link(href="/rules") Правила Магазину
       li.nav-item
-        a.nav-link(href="#")
+        a.nav-link(href="/basket")
           i.bi-cart2
 </template>
 
@@ -25,5 +25,5 @@ a
     color: #FFFFFF
 h1
   font-size: calc(0.75rem + 0.3vw)
+  margin-top: 0.75rem
 </style>
-  
