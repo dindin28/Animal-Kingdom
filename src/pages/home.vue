@@ -1,15 +1,16 @@
 <template lang="pug">
 .container
-  .row
-    .col-sm-12.col-md-8
-      img.img-fluid(src="/src/assets/images/int_facts.png", alt="Animal Kingdom") 
-    .col-sm-12.col-md-3.d-flex.flex-column.justify-content-center.pt-md-5
-      p 
-        span На фотографії зображений 
-        span.fw-bold дикий кіт.
-      p 
-        span.text-decoration-underline Цікавий факт: 
-        | вони здатні рухатися дуже швидко та підніматися на високість. Вони можуть стрибати на відстань до 6 метрів у довжину та до 3 метрів у висоту, що дозволяє їм підкрадатися до жертви з-за кущів або з високих дерев.
+  .container.col-xxl-10
+    .row.align-items-center.g-5
+      .col-12.col-sm-7.col-lg-8
+        img.d-block.mx-lg-auto.img-fluid(src="/src/assets/images/int_facts.avif", alt="Animal Kingdom") 
+      .col-lg-4.col-sm-5.py-5
+        p 
+          span На фотографії зображений 
+          span.fw-bold дикий кіт.
+        p 
+          span.text-decoration-underline Цікавий факт: 
+          | вони здатні рухатися дуже швидко та підніматися на високість. Вони можуть стрибати на відстань до 6 метрів у довжину та до 3 метрів у висоту, що дозволяє їм підкрадатися до жертви з-за кущів або з високих дерев.
   .text-center
     p.fw-bold Ласкаво просимо до нашого зоомагазину!
     span Ми пропонуємо широкий вибір товарів для тварин усіх видів та розмірів. Наші продукти включають корми, іграшки, аксесуари та багато іншого, що допоможе забезпечити вашому улюбленцю комфортне та здорове життя.
@@ -17,11 +18,10 @@
   .text-center 
     h2 Категорії
     .p-1
-    .row
-      .col(v-for="category in categories" :key="category.link")
-        .col-12.col-md-12
-          a(:href="category.link")
-            img.img-fluid.img-grow(:src="category.src", width="160" alt="Animal Kingdom")
+    .row.d-flex.justify-content-center
+      .col-4.col-sm-6.col-md-3.p-2(v-for="category in categories" :key="category.link")
+        a(:href="category.link")
+          img.img-fluid.img-grow(:src="category.src", width="160" alt="Animal Kingdom")
     .p-4
     h2  ТОП товарів за кількістью продажів
     .row.my-4
@@ -39,6 +39,12 @@
   .p-4
   .text-center 
     h2 Новинки
+    .row.my-4
+      .col.px-1(v-for="newItem in newItems" :key="newItem.link")
+        .col-md-12.col-12.mb-4
+          a(:href="newItem.link")
+            img.img-fluid.img-grow(:src="newItem.src", width="160", alt="Animal Kingdom")
+            p.pt-3.text-dark {{ newItem.title }}
   .p-2
 </template>
 
@@ -48,59 +54,76 @@ export default {
     return {
       categories: [
         {
-          src: "/src/assets/images/chamsters.png",
+          src: "/src/assets/images/chamsters.avif",
           link: "/animals/chamsters",
         },
         {
-          src: "/src/assets/images/cats.png",
+          src: "/src/assets/images/cats.avif",
           link: "/animals/cats",
         },
         {
-          src: "/src/assets/images/dogs.png",
+          src: "/src/assets/images/dogs.avif",
           link: "/animals/dogs",
         },
         {
-          src: "/src/assets/images/fishes.png",
+          src: "/src/assets/images/fishes.avif",
           link: "/animals/fishes",
         },
         {
-          src: "/src/assets/images/birds.png",
+          src: "/src/assets/images/birds.avif",
           link: "/animals/birds",
         },
         {
-          src: "/src/assets/images/turtles.png",
+          src: "/src/assets/images/turtles.avif",
           link: "/animals/turtles",
         },
         {
-          src: "/src/assets/images/other.png",
+          src: "/src/assets/images/other.avif",
           link: "/animals/other",
         },
       ],
       topItems: [
         {
-          src: "/src/assets/images/aquarium.png",
+          src: "/src/assets/images/aquarium.avif",
           link: "/products/aquarium",
           title: "Акваріум",
         },
         {
-          src: "/src/assets/images/cage.png",
+          src: "/src/assets/images/cage.avif",
           link: "/products/cage",
           title: "Клітка для папуги",
         },
         {
-          src: "/src/assets/images/bowl.png",
+          src: "/src/assets/images/bowl.avif",
           link: "/products/bowl",
           title: "Набір мисок",
         },
         {
-          src: "/src/assets/images/leash.png",
+          src: "/src/assets/images/leash.avif",
           link: "/products/leash",
           title: "Повідець на рулетці",
         },
         {
-          src: "/src/assets/images/slicker.png",
+          src: "/src/assets/images/slicker.avif",
           link: "/products/slicker",
           title: "Пуходірка",
+        },
+      ],
+      newItems: [
+        {
+          src: "/src/assets/images/aquarium.avif",
+          link: "/products/aquarium",
+          title: "Акваріум",
+        },
+        {
+          src: "/src/assets/images/cage.avif",
+          link: "/products/cage",
+          title: "Клітка для папуги",
+        },
+        {
+          src: "/src/assets/images/bowl.avif",
+          link: "/products/bowl",
+          title: "Набір мисок",
         },
       ],
     };

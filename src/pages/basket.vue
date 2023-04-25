@@ -1,46 +1,54 @@
 <template lang="pug">
 .container.pt-3
   h2.mb-4 Кошик
-  .row
-    .col-12.col-md-8
-      table.table.table-striped
-        thead
-          tr
-            th Продукт
-            th Ціна
-            th Кількість
-            th Видалити
-        tbody
-          tr(v-for="(item, index) in cartItems" :key="item.title")
-            td {{ item.title }}
-            td {{ item.price }}
-            td {{ item.quantity }}
-            td
-              button.btn.btn-danger.btn-sm(@click="removeFromCart(index)") Видалити
-    .col-12.col-md-4
-      h4.mb-3 Загальна вартість: {{ total }}
-      button.btn.btn-success.btn-block(@click="checkout") Оформити замовлення
+  .table-responsive
+    table.table.table-striped
+      thead
+        tr
+          th
+          th Продукт
+          th Ціна
+          th Кількість
+          th Видалити
+      tbody
+        tr(v-for="(item, index) in cartItems" :key="item.title")
+          td
+            img.img-fluid(:src="item.src" alt="item.title" width="150")
+          td.align-middle {{ item.title }}
+          td.align-middle {{ item.price }}
+          td.align-middle
+            input.form-control.w-25.w-md-25(type="number" min="1" v-model.number="item.quantity" @change="updateQuantity(item)")
+          td.align-middle
+            button.btn.btn-danger.btn-sm(@click="removeFromCart(index)") Видалити
+  h4.mb-3
+    .d-flex.justify-content-between
+      span Загальна вартість: 
+      span {{ total }} грн
+  .d-flex.justify-content-between
+    a.col-5(href="/")
+      button.btn.btn-secondary.btn-block Повернутися до покупок
+    a.col-5.text-end(v-if="cartItems.length" href="/order")
+      button.btn.btn-success.btn-block Оформити замовлення
+  .p-5
 </template>
 
 <script>
 export default {
-  async prefetch({ initialState }) {
-
-    console.log(initialState.products);
-
-    const cartItems = initialState.products;
-
+  data() {
     return {
-      cartItems,
+      cartItems: [],
     };
+  },
+  created() {
+    if (!import.meta.env.SSR) {
+      this.cartItems = JSON.parse(localStorage.getItem("basket"));
+    }
   },
   computed: {
     total() {
-      if (!this.cartItems) {
-        return 0;
-      }
+      if (!this.cartItems) return 0;
       return this.cartItems.reduce(
-        (sum, item) => sum + parseFloat(item.price),
+        (sum, item) => sum + parseFloat(item.price) * item.quantity,
         0
       );
     },
@@ -48,9 +56,18 @@ export default {
   methods: {
     removeFromCart(index) {
       this.cartItems.splice(index, 1);
+      localStorage.setItem("basket", JSON.stringify(this.cartItems));
     },
-    checkout() {
-      // Handle the checkout process here
+    updateQuantity(item) {
+      const cart = JSON.parse(localStorage.getItem("basket") || "[]");
+      const existingItem = cart.find(
+        (cartItem) => cartItem.title === item.title
+      );
+
+      if (existingItem) {
+        existingItem.quantity = item.quantity;
+        localStorage.setItem("basket", JSON.stringify(cart));
+      }
     },
   },
 };

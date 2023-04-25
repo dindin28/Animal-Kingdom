@@ -18,6 +18,7 @@
             img.img-grow.img-fluid(:src="image.src", width="180" alt="Animal Kingdom")
           p.pt-3 {{ image.caption }}
           span.small {{ image.price }}
+  .p-2
 </template>
 
 <script>
@@ -27,12 +28,12 @@ const animalData = {
     text: "Хом'яки - це маленькі, хутряні гризуни, які стануть чудовими домашніми тваринами для людей всіх віків.",
     images: [
       {
-        src: "/src/assets/images/chamsters1.png",
+        src: "/src/assets/images/chamsters1.avif",
         link: "/products/chamsters1",
         caption: "Хом'як, що грається на колесі.",
       },
       {
-        src: "/src/assets/images/chamsters2.png",
+        src: "/src/assets/images/chamsters2.avif",
         link: "/products/chamsters2",
         caption: "Хом'як, що спить у своєму гнізді.",
       },
@@ -43,73 +44,73 @@ const animalData = {
     text: "Коти - розумні та незалежні тварини, відомі своєю іграшливістю та ласкавістю.",
     images: [
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/slicker.png",
+        src: "/src/assets/images/slicker.avif",
         link: "/products/slicker",
         caption: "Пуходірка",
         price: "100 грн",
       },
       {
-        src: "/src/assets/images/leash.png",
+        src: "/src/assets/images/leash.avif",
         link: "/products/leash",
         caption: "Поводок",
         price: "250 грн",
       },
       {
-        src: "/src/assets/images/leash.png",
+        src: "/src/assets/images/leash.avif",
         link: "/products/leash",
         caption: "Поводок",
         price: "250 грн",
       },
       {
-        src: "/src/assets/images/leash.png",
+        src: "/src/assets/images/leash.avif",
         link: "/products/leash",
         caption: "Поводок",
         price: "250 грн",
       },
       {
-        src: "/src/assets/images/leash.png",
+        src: "/src/assets/images/leash.avif",
         link: "/products/leash",
         caption: "Поводок",
         price: "250 грн",
@@ -144,13 +145,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.list-transition
-  &-enter-active, &-leave-active
-    transition: all 0.5s
-  &-enter, &-leave-to
-    opacity: 0
-    transform: translateY(30px)
-
 @media (max-width: 576px)
   img.img-fluid
     height: auto

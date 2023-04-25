@@ -19,4 +19,14 @@ export default [
     name: 'Basket',
     component: () => import("./pages/basket.vue"),
   },
+  {
+    path: '/order',
+    name: 'Order',
+    component: () => import("./pages/order.vue"),
+  },
+  {
+    path: '/reviews',
+    name: 'Reviews',
+    component: () => import("./pages/reviews.vue"),
+  },
 ];

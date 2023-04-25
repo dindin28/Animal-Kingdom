@@ -6,7 +6,8 @@
     .col-12.col-md-6
       h2 {{ product.title }}
       p.lead {{ product.price }}
-      button.btn.btn-success.transition-button(@click.stop="buyItem") {{ addedToCart ? 'Додано в кошик' : 'Купити' }}
+      .badge.text-bg-danger(v-if="product?.inStock === false") Немає в наявності
+      button.btn.btn-success.transition-button(v-else, @click.stop="buyItem" ) {{ addedToCart ? 'Додано в кошик' : 'Купити' }}
   .row.py-4
     .col-12
       h4 Опис товару:
@@ -29,7 +30,7 @@
 <script>
 const productsData = {
   aquarium: {
-    src: "/src/assets/images/aquarium.png",
+    src: "/src/assets/images/aquarium.avif",
     link: "/products/aquarium",
     title: "Акваріум",
     description:
@@ -37,15 +38,16 @@ const productsData = {
     price: "2000 грн",
   },
   cage: {
-    src: "/src/assets/images/cage.png",
+    src: "/src/assets/images/cage.avif",
     link: "/products/cage",
     title: "Клітка для папуги",
     description:
       "Простора клітка для папуги з гойдалкою та кормушками для комфортного життя вашої птахи.",
     price: "1500 грн",
+    inStock: false,
   },
   bowl: {
-    src: "/src/assets/images/bowl.png",
+    src: "/src/assets/images/bowl.avif",
     link: "/products/bowl",
     title: "Набір мисок",
     description:
@@ -53,7 +55,7 @@ const productsData = {
     price: "300 грн",
   },
   leash: {
-    src: "/src/assets/images/leash.png",
+    src: "/src/assets/images/leash.avif",
     link: "/products/leash",
     title: "Повідець на рулетці",
     description:
@@ -61,7 +63,7 @@ const productsData = {
     price: "250 грн",
   },
   slicker: {
-    src: "/src/assets/images/slicker.png",
+    src: "/src/assets/images/slicker.avif",
     link: "/products/slicker",
     title: "Пуходірка",
     description:
@@ -87,6 +89,19 @@ export default {
   methods: {
     buyItem() {
       this.addedToCart = true;
+
+      const storedCart = JSON.parse(localStorage.getItem("basket") || "[]");
+      const existingItemIndex = storedCart.findIndex(
+        (item) => item.title === this.product.title
+      );
+
+      if (existingItemIndex >= 0) {
+        storedCart[existingItemIndex].quantity += 1;
+      } else {
+        storedCart.push({ ...this.product, quantity: 1 });
+      }
+
+      localStorage.setItem("basket", JSON.stringify(storedCart));
 
       setTimeout(() => {
         this.addedToCart = false;

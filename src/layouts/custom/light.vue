@@ -1,13 +1,12 @@
 <template lang="pug">
-div
-  .bg-primary-subtle
-    .container
-      app-header
-  .slot-background
-    slot
-  .background
-    .container
-      app-footer
+.bg-primary-subtle
+  .container
+    app-header
+.slot-background
+  slot
+.background
+  .container
+    app-footer
 </template>
 
 <script>

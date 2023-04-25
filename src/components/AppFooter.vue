@@ -22,7 +22,7 @@ footer
             a.link-secondary(href="mailto:email.help@gmail.com") email.help@gmail.com
       .col
         h2.fw-light.text-decoration-underline Ми на карті
-        img(src="../assets/images/GoogleMapTA.webp", alt="Google Maps", class="map-image mb-3")
+        img(src="../assets/images/GoogleMapTA.avif", alt="Google Maps", class="map-image mb-3")
         h2.fw-light.text-decoration-underline Графік роботи
         ul
           li Будні дні: 8:00 - 20:00

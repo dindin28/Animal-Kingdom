@@ -16,7 +16,6 @@ export default viteSSR(
     writeResponse,
     request,
     redirect,
-    url,
   }) => {
     const head = createHead();
     app.use(head).component(ClientOnly.name, ClientOnly);
@@ -26,6 +25,7 @@ export default viteSSR(
     return { head };
 
     async function processPrefetchHook(to, from, next) {
+
       const component = to.matched[0]?.components.default;
       const instance = to.matched[0]?.instances.default;
 

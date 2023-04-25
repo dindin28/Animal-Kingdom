@@ -12,7 +12,6 @@ module.exports = {
         return [
           "src/**/*.vue",
           "index.html",
-          "node_modules/@908inc/odb-components/**/*.vue",
         ];
       },
       defaultExtractor(content) {
