@@ -37,10 +37,10 @@ const productsData = {
       "Сучасний акваріум зі скла, ідеальний для різноманітних видів риб та рослин.",
     price: "2000 грн",
   },
-  cage: {
-    src: "/src/assets/images/cage.avif",
-    link: "/products/cage",
-    title: "Клітка для папуги",
+  birdCage: {
+    src: "/src/assets/images/birdCage.avif",
+    link: "/products/birdCage",
+    title: "Клітка для птахів",
     description:
       "Простора клітка для папуги з гойдалкою та кормушками для комфортного життя вашої птахи.",
     price: "1500 грн",
@@ -73,8 +73,8 @@ const productsData = {
     price: "100 грн",
   },
   catFood: {
-    src: "/src/assets/images/cat-food.avif",
-    link: "/products/cat-food",
+    src: "/src/assets/images/catFood.avif",
+    link: "/products/catFood",
     title: "Корм для котів",
     description:
       "Корм для котів - це спеціальний продукт, призначений для годування котів, який містить всі необхідні поживні речовини для здоров'я та добробуту тварини. Корм може бути в сухій або вологій формі, в залежності від вимог та вподобань кота.",
@@ -83,8 +83,8 @@ const productsData = {
     price: "50 грн",
   },
   dogFood: {
-    src: "/src/assets/images/dog-food.avif",
-    link: "/products/dog-food",
+    src: "/src/assets/images/dogFood.avif",
+    link: "/products/dogFood",
     title: "Корм для собак",
     description:
       "Корм для собак - це спеціально складений продукт, який містить необхідну кількість поживних речовин та вітамінів для здорового розвитку тварини. Корм може бути виготовлений з різних інгредієнтів, таких як м'ясо, злаки, овочі та фрукти.",
@@ -93,8 +93,8 @@ const productsData = {
     price: "200 грн",
   },
   catHammock: {
-    src: "/src/assets/images/cat-hammock.avif",
-    link: "/products/cat-hammock",
+    src: "/src/assets/images/catHammock.avif",
+    link: "/products/catHammock",
     title: "Гамак для кішок",
     description:
       "Гамак для кішок - це спеціальний меблевий виріб, призначений для відпочинку та розваг тварини. Гамак складається з тканини, яка натягнута на металеву раму, та кріпиться до стіни або меблів.",
@@ -103,8 +103,8 @@ const productsData = {
     price: "200 грн",
   },
   dogCollar: {
-    src: "/src/assets/images/dog-collar.avif",
-    link: "/products/dog-collar",
+    src: "/src/assets/images/dogCollar.avif",
+    link: "/products/dogCollar",
     title: "Кличка для собаки",
     description:
       "Кличка для собаки - це спеціальний аксесуар, який надівається на шию тварини та використовується для ідентифікації та контролю над твариною. Клички можуть бути виготовлені з різних матеріалів, таких як шкіра, нейлон, або метал.",
@@ -114,17 +114,17 @@ const productsData = {
   },
   litterBox:
   {
-    src: "/src/assets/images/litter-box.avif",
-    link: "/products/litter-box",
-    title: "Туалет для кішок",
+    src: "/src/assets/images/litterBox.avif",
+    link: "/products/litterBox",
+    title: "Туалет для котів",
     description:
       "Компактний туалет для кішок з високими бортиками та сіткою для утримання наповнювача.",
     price: "500 грн",
   },
   scratchingPost:
   {
-    src: "/src/assets/images/scratching-post.avif",
-    link: "/products/scratching-post",
+    src: "/src/assets/images/scratchingPost.avif",
+    link: "/products/scratchingPost",
     title: "Дерев'яний скретчер",
     description:
       "Дерев'яний скретчер для кішок з м'якою тканиною та гойдалкою для гри.",
@@ -132,22 +132,49 @@ const productsData = {
   },
   dogHouse:
   {
-    src: "/src/assets/images/dog-house.avif",
-    link: "/products/dog-house",
-    title: "Будка для собак",
+    src: "/src/assets/images/dogHouse.avif",
+    link: "/products/dogHouse",
+    title: "Будка",
     description:
       "Комфортна будка для собак з віконцями та дверима, що запобігають попаданню опадів.",
     price: "3000 грн",
   },
   fishFood:
   {
-    src: "/src/assets/images/fish-food.avif",
-    link: "/products/fish-food",
+    src: "/src/assets/images/fishFood.avif",
+    link: "/products/fishFood",
     title: "Корм для риб",
     description:
       "Корм для різних видів риб з відповідними поживними речовинами та вітамінами.",
     price: "70 грн",
   },
+  birdFood:
+  {
+    src: "/src/assets/images/birdFood.avif",
+    link: "/products/birdFood",
+    title: "Корм для птахів",
+    description:
+      "Корм для різних видів птахів з відповідними поживними речовинами та вітамінами.",
+    price: "120 грн",
+  },
+  turtleFood:
+  {
+    src: "/src/assets/images/turtleFood.avif",
+    link: "/products/turtleFood",
+    title: "Корм для черепах",
+    description:
+      "Корм для черепах - спеціально розроблений раціон, який забезпечує черепах необхідними поживними речовинами, включаючи вітаміни та мінерали, для підтримки їх здоров'я.",
+    price: "119 грн",
+  },
+  horseSaddle:
+  {
+    src: "/src/assets/images/horseSaddle.avif",
+    link: "/products/horseSaddle",
+    title: "Сідло для коней",
+    description:
+      "Сідло для коней гарантує комфортну їзду, як для коня так і для вершника",
+    price: "599 грн",
+  }
 };
 
 export default {

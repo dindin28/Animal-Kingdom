@@ -89,8 +89,8 @@ export default {
           title: "Акваріум",
         },
         {
-          src: "/src/assets/images/cage.avif",
-          link: "/products/cage",
+          src: "/src/assets/images/birdCage.avif",
+          link: "/products/birdCage",
           title: "Клітка для папуги",
         },
         {
@@ -116,8 +116,8 @@ export default {
           title: "Акваріум",
         },
         {
-          src: "/src/assets/images/cage.avif",
-          link: "/products/cage",
+          src: "/src/assets/images/birdCage.avif",
+          link: "/products/birdCage",
           title: "Клітка для папуги",
         },
         {
