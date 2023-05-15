@@ -73,7 +73,7 @@ const productsData = {
     price: "100 грн",
   },
   catFood: {
-    src: "/src/assets/images/cat-food.png",
+    src: "/src/assets/images/cat-food.avif",
     link: "/products/cat-food",
     title: "Корм для котів",
     description:
@@ -83,7 +83,7 @@ const productsData = {
     price: "50 грн",
   },
   dogFood: {
-    src: "/src/assets/images/dog-food.png",
+    src: "/src/assets/images/dog-food.avif",
     link: "/products/dog-food",
     title: "Корм для собак",
     description:
@@ -93,7 +93,7 @@ const productsData = {
     price: "200 грн",
   },
   catHammock: {
-    src: "/src/assets/images/cat-hammock.png",
+    src: "/src/assets/images/cat-hammock.avif",
     link: "/products/cat-hammock",
     title: "Гамак для кішок",
     description:
@@ -123,7 +123,7 @@ const productsData = {
   },
   scratchingPost:
   {
-    src: "/src/assets/images/scratching-post.png",
+    src: "/src/assets/images/scratching-post.avif",
     link: "/products/scratching-post",
     title: "Дерев'яний скретчер",
     description:
@@ -132,7 +132,7 @@ const productsData = {
   },
   dogHouse:
   {
-    src: "/src/assets/images/dog-house.png",
+    src: "/src/assets/images/dog-house.avif",
     link: "/products/dog-house",
     title: "Будка для собак",
     description:
@@ -141,7 +141,7 @@ const productsData = {
   },
   fishFood:
   {
-    src: "/src/assets/images/fish-food.png",
+    src: "/src/assets/images/fish-food.avif",
     link: "/products/fish-food",
     title: "Корм для риб",
     description:
