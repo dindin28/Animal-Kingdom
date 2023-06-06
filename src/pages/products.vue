@@ -174,6 +174,20 @@ const productsData = {
     description:
       "Сідло для коней гарантує комфортну їзду, як для коня так і для вершника",
     price: "599 грн",
+  },
+  hamsterFood:
+  {
+    src: "/src/assets/images/hamsterFood.avif",
+    link: "/products/hamsterFood",
+    title: "Їжа для хом'яків",
+    price: "190 грн",
+  },
+  hamsterCage:
+  {
+    src: "/src/assets/images/hamsterCage.avif",
+    link: "/products/hamsterCage",
+    caption: "Домівка для хом'яка",
+    price: "1200 грн",
   }
 };
 
